@@ -85,18 +85,20 @@ if __name__=='__main__':
 	pred_result_path = "./IMAGES/street_pred.jpg"
 	# video_path   = "./IMAGES/test.mp4"
 	
-	# test image 1
-	cropped = vehicle_obj.predict(image_path, pred_result_path)
-	VehicleDetector.display_image(cropped, 0)
-
-	# test image 2 with time check
+	# test image 1 with time check
 	t1 = time.time()
+	cropped = vehicle_obj.predict(image_path, pred_result_path)
+	print("TIME", time.time()-t1)
+	VehicleDetector.display_image(cropped, 0)
+	
+
+	# test image 2
 	image_path = "./IMAGES/city.jpg"
 	pred_result_path = "./IMAGES/city_pred.jpg"
+	t1 = time.time()
 	cropped = vehicle_obj.predict(image_path, pred_result_path)
-	# VehicleDetector.display_image(cropped, 0)
-	t2 = time.time()
+	print("TIME", time.time()-t1)
+	VehicleDetector.display_image(cropped, 0)
 
-	print("TIME", t2-t1)
 
 	
